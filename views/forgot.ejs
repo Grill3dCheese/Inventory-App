@@ -1,0 +1,35 @@
+<%- include('partials/header'); -%>
+<header class="masthead">
+	<div class="container h-100">
+		<div class="row h-100 justify-content-center align-items-center">
+			<div class="col-sm-12 col-md-6">
+				<div class="card">
+					<h1 class="card-header forgot-gradient text-center py-4">Forgot Password</h1>
+					<div class="card-body px-lg-5 pt-0">
+						<form action="/forgot" method="POST">
+							<div class="cForm">
+								<input
+									class="form-control"
+									type="email"
+									name="email"
+									placeholder="Email"
+									autofocus="autofocus"
+									required
+								/>
+							</div>
+							<div class="cForm">
+								<input
+									type="submit"
+									class="btn btn-outline-dark btn-lg btn-block"
+									value="Reset Password"
+								/>
+							</div>
+						</form>
+						<a href="/">Login Page</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+<%- include('partials/footer'); -%>
