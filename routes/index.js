@@ -31,10 +31,7 @@ router.post("/register", function(req, res){
     var newUser = new User({
             username: req.body.username,
             firstName: req.body.firstName,
-            lastName: req.body.lastName,
-            city: req.body.city,
-            email: req.body.email,
-            avatar: req.body.avatar
+            email: req.body.email
         });
         
     if(req.body.adminCode === process.env.SECRETCODE) {
