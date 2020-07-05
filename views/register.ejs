@@ -1,0 +1,65 @@
+<%- include('partials/header'); -%>
+
+<header class="masthead">
+	<div class="container h-100">
+		<div class="row h-100 justify-content-center align-items-center">
+			<div class="col-sm-12 col-md-6">
+				<div class="card">
+					<h1 class="card-header stPat-gradient text-center py-4">Sign Up</h1>
+					<div class="card-body px-lg-5 pt-0">
+						<form action="/register" method="POST">
+							<div class="cForm">
+								<input
+									class="form-control"
+									type="text"
+									name="username"
+									placeholder="Username"
+								/>
+							</div>
+							<div class="cForm">
+								<input
+									class="form-control"
+									type="password"
+									name="password"
+									placeholder="Password"
+								/>
+							</div>
+							<div class="cForm">
+								<input
+									class="form-control"
+									type="text"
+									name="firstName"
+									placeholder="First name"
+								/>
+							</div>
+							<div class="cForm">
+								<input
+									class="form-control"
+									type="email"
+									name="email"
+									placeholder="Email"
+								/>
+							</div>
+							<div class="cForm">
+								<input
+									class="form-control"
+									type="password"
+									name="adminCode"
+									placeholder="Admin code"
+								/>
+							</div>
+							<div class="cForm">
+								<button class="btn btn-outline-dark btn-lg btn-block">
+									Sign Up!
+								</button>
+							</div>
+						</form>
+						<a href="/">Go Back</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+<%- include('partials/footer'); -%>
