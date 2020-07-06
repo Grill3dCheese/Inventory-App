@@ -8,10 +8,12 @@ var express			= require("express"),
 	LocalStrategy 	= require("passport-local"),
 	methodOverride 	= require("method-override"),
 	bodyParser		= require("body-parser"),
+	Item			= require("./models/item"),
 	User			= require("./models/user");
 
 //requiring routes
-var indexRoutes		= require("./routes/index")
+var indexRoutes		= require("./routes/index"),
+	itemRoutes		= require("./routes/items")
 
 // assign mongoose promise library and connect to database
 mongoose.Promise = global.Promise;
@@ -48,6 +50,7 @@ app.use(function(req, res, next){
 });
 
 app.use(indexRoutes);
+app.use(itemRoutes);
 
 app.listen(process.env.PORT || 3000, process.env.IP, function(){
 	console.log("The server has started.");
