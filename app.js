@@ -1,4 +1,4 @@
-// require('dotenv').config();
+require('dotenv').config();
 
 var express			= require("express"),
 	app				= express(),
@@ -7,7 +7,8 @@ var express			= require("express"),
 	passport		= require("passport"),
 	LocalStrategy 	= require("passport-local"),
 	methodOverride 	= require("method-override"),
-	bodyParser		= require("body-parser");
+	bodyParser		= require("body-parser"),
+	User			= require("./models/user");
 
 //requiring routes
 var indexRoutes		= require("./routes/index")
@@ -15,7 +16,7 @@ var indexRoutes		= require("./routes/index")
 // assign mongoose promise library and connect to database
 mongoose.Promise = global.Promise;
 
-mongoose.connect('mongodb://localhost:27017/inventory_app")', { userNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true })
+mongoose.connect('mongodb://localhost:27017/inventory_app', { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true })
 		.then(() => console.log(`Database connected.`))
 		.catch(err => console.log(`Database connection error: ${err.message}`));
 
@@ -35,9 +36,9 @@ app.use(require("express-session")({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
-// passport.use(new LocalStrategy(User.authenticate()));
-// passport.serializeUser(User.serializeUser());
-// passport.deserializeUser(User.deserializeUser());
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
 app.use(function(req, res, next){
 	res.locals.currentUser = req.user;
