@@ -1,0 +1,63 @@
+<%- include('partials/header'); -%>
+
+<header class="masthead">
+	<div class="container h-100">
+		<div class="row h-100 justify-content-center align-items-center">
+			<div class="col-sm-12 col-md-6">
+				<div class="card">
+					<h1 class="card-header mellowYellow-gradient text-center py-4">
+						Reset Password
+					</h1>
+					<div class="card-body px-lg-5 pt-0">
+						<form action="/reset/<%= token %>" method="POST">
+							<div class="mod-form">
+								<input
+									type="password"
+									name="password"
+									id="password"
+									placeholder="New Password"
+									autofocus="autofocus"
+									class="form-control"
+									required
+								/>
+							</div>
+							<div class="mod-form">
+								<input
+									type="password"
+									name="confirm"
+									id="confirm_password"
+									placeholder="Confirm Password"
+									class="form-control"
+									required
+								/>
+							</div>
+							<div class="mod-form">
+								<button type="submit" class="btn btn-outline-dark btn-lg btn-block">
+									Update Password
+								</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+<script>
+var password = document.getElementById("password")
+  , confirm_password = document.getElementById("confirm_password");
+
+function validatePassword(){
+  if(password.value != confirm_password.value) {
+    confirm_password.setCustomValidity("Passwords Don't Match");
+  } else {
+    confirm_password.setCustomValidity('');
+  }
+}
+
+password.onchange = validatePassword;
+confirm_password.onkeyup = validatePassword;
+</script>
+
+<%- include('partials/footer'); -%>
