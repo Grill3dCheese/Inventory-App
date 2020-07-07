@@ -4,7 +4,7 @@ var Inventory = require("../models/item");
 var middleware = require("../middleware");
 
 // index of inventory page
-router.get("/inventory", function(req, res){
+router.get("/inventory", middleware.isLoggedIn, function(req, res){
     Inventory.find({}, function(err, items){
         if(err){
             console.log(err);
