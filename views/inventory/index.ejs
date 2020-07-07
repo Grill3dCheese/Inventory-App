@@ -1,3 +1,51 @@
-<h1>
-	You've reached the inventory page! Congrats!
-</h1>
+<%- include('../partials/inventoryHeader'); -%>
+
+<div class="container-fluid">
+	<% if(currentUser && currentUser.isAdmin == true){ %>
+		<div class="jumbotron text-center">
+			<div class="container">
+				<div class="row justify-content-center">
+					<h1>Welcome,
+						<%= currentUser.username %>!</h1>
+				</div>
+				<div class="row justify-content-center">
+					<p>You've reached the admin panel.<br>From here, you can add additional items to the inventory database.</p>
+				</div>
+				<div class="row justify-content-center">
+					<p>
+						<a class="btn border-0 shampoo-gradient" href="/item/new" role="button">
+							<i class="fas fa-pencil-alt"></i> Add New Item</a>
+					</p>
+				</div>
+			</div>
+		</div>
+		<% } %>
+
+			<div class="row">
+				<% items.reverse().forEach(function(post){ %>
+					<div class="col-md-6 col-lg-4 col-xl-2">
+						<div class="card card-overlay slender mb-4">
+							<div class="view view-overlay">
+							<img class="card-img-top" src="<%= item.image %>">
+								</div>
+							<div class="card-body text-center">
+								<h4 class="card-title">
+									<%= item.name %>
+								</h4>
+								<p class="card-text">
+									<%= item.description %>
+								</p>
+							<p>
+								<a href="/blog/<%= item._id %>" class="btn border-0 shampoo-gradient">Read More...</a>
+							</p>
+								</div>
+							<div class="card-footer text-muted text-center">
+								<%= moment(item.createdAt).fromNow() %>
+							</div>
+						</div>
+					</div>
+					<% }); %>
+			</div>
+</div>
+
+<%- include('../partials/footer'); -%>
