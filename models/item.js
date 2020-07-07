@@ -5,6 +5,7 @@ var itemSchema = new mongoose.Schema({
     name: String,
 	quantity: Number,
     category: String,
+	tag: String,
     image: String,
     description: String,
     createdAt: { type: Date, default: Date.now },
