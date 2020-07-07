@@ -46,10 +46,16 @@ a:hover {
 	text-decoration: none
 }
 
+p {
+	margin: 10px 0
+}
+
 .masthead {
 	height: 100%;
   	min-height: 500px;
 }
+
+/* Gradients */
 
 .blueDreams {
 	background-image: radial-gradient( circle farthest-corner at 22.4% 21.7%,  rgba(4,189,228,1) 0%, rgba(2,83,185,1) 100.2% );
@@ -99,6 +105,8 @@ a:hover {
 	box-shadow:0 12px 15px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19) !important
 }
 
+/* Flash Messaging */
+
 .alert {
 	position: fixed;
 }
@@ -107,17 +115,15 @@ a:hover {
 	z-index: 1070;
 }
 
+/* Navigation */
+
 #mainNav {
 	font-family: Montserrat, Helvetica Neue, Helvetica, Arial, sans-serif;
 	font-size: 1rem;
     /* box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2); */
     transition: all 1.2s;
-	background-color: rgb(237, 242, 247);
+	background-color: rgb(0, 0, 0);
 	text-transform: uppercase;
-}
-
-.scrollUp {
-    transform: translateY(-92px);
 }
 
 #mainNav .nav-link {
@@ -132,56 +138,22 @@ a:hover {
     border: none;
 }
 
-.wrapper-menu {
-  width: 30px;
-  height: 28px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  cursor: pointer;
-  transition: transform 330ms ease-out;
+#mainNav img {
+	width: 40px;
+	height: 40px
 }
 
-.wrapper-menu.open {
-  transform: rotate(-45deg);  
+.navbar-toggler {
+	padding: 0
 }
 
-.line-menu {
-  background-color: #22577f;
-  border-radius: 5px;
-  width: 100%;
-  height: 3px;
-}
-
-.line-menu.half {
-  width: 50%;
-}
-
-.line-menu.start {
-  transition: transform 330ms cubic-bezier(0.54, -0.81, 0.57, 0.57);
-  transform-origin: right;
-}
-
-.open .line-menu.start {
-  transform: rotate(-90deg) translateX(3px);
-}
-
-.line-menu.end {
-  align-self: flex-end;
-  transition: transform 330ms cubic-bezier(0.54, -0.81, 0.57, 0.57);
-  transform-origin: left;
-}
-
-.open .line-menu.end {
-  transform: rotate(-90deg) translateX(-3px);
-}
-
-#mainNav .navbar-brand {
-	color: #22577f;
+.scrollUp {
+    transform: translateY(-92px);
 }
 
 .jumbotron {
 	background-color: #40434E;
+	width: 100%;
 	color: lightyellow;
 	padding: 2rem 1rem
 }
@@ -292,4 +264,33 @@ a:hover {
 
 .cForm input:not([type]):focus:not([readonly])+label,.cForm input[type="text"]:not(.browser-default):focus:not([readonly])+label,.cForm input[type="password"]:not(.browser-default):focus:not([readonly])+label,.cForm textarea.contact-textarea:focus:not([readonly])+label {
     color: #22577f
+}
+
+/* Media Queries */
+
+@media (max-width: 768px) {
+    .navbar-collapse {
+        position: absolute;
+        top: 54px;
+        left: 0;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-bottom: 15px;
+        width: 100%;
+    }
+    .navbar-collapse.collapsing {
+        height: auto;
+        -webkit-transition: left 0.3s ease;
+        -o-transition: left 0.3s ease;
+        -moz-transition: left 0.3s ease;
+        transition: left 0.3s ease;
+        left: -100%;
+    }
+    .navbar-collapse.show {
+        left: 0;
+        -webkit-transition: left 0.3s ease-in;
+        -o-transition: left 0.3s ease-in;
+        -moz-transition: left 0.3s ease-in;
+        transition: left 0.3s ease-in;
+    }
 }
