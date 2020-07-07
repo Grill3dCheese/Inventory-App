@@ -1,11 +1,49 @@
 body {
-	
+	font-family: Montserrat, Helvetica Neue, Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	position: relative;
+	color: #191919;
+	background-color: #edf2f7
 }
 
 body,
 html {
 	width: 100%;
 	height: 100%
+}
+
+h1 {
+	font-family: Raleway, Helvetica Neue, Helvetica, Arial, sans-serif;
+	font-weight: 700;
+	letter-spacing: 1px;
+	text-transform: uppercase
+}
+
+h2 {
+	font-family: Raleway, Helvetica Neue, Helvetica, Arial, sans-serif;
+	font-weight: 700;
+	margin-top: 25px;
+	text-transform: uppercase
+}
+
+h3 {
+	font-family: Raleway, Helvetica Neue, Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	color: #e1a87a;
+	font-weight: 700;
+	margin: 0 0 25px 0;
+	letter-spacing: .12em;
+	line-height: 1.6em;
+	text-transform: uppercase
+}
+
+a {
+	transition: all .3s ease-in-out
+}
+
+a:focus,
+a:hover {
+	text-decoration: none
 }
 
 .masthead {
@@ -42,6 +80,126 @@ html {
 	background: -moz-linear-gradient(310deg, rgba(255,255,224,1) 0%, rgba(255,97,97,1) 100%) !important;
 	background: -o-linear-gradient(310deg, rgba(255,255,224,1) 0%, rgba(255,97,97,1) 100%) !important;
 	background: linear-gradient(40deg, rgba(255,255,224,1) 0%, rgba(255,97,97,1) 100%) !important;
+}
+
+.btn.shampoo-gradient {
+	color: #40434E
+}
+
+.container-fluid {
+	padding: 65px 35px 0 35px;
+}
+
+.btn.focus, .btn:focus {
+	box-shadow: none;
+}
+
+.imgShadow {
+	-webkit-box-shadow:0 12px 15px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19) !important;
+	box-shadow:0 12px 15px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19) !important
+}
+
+.alert {
+	position: fixed;
+}
+
+.navIndex {
+	z-index: 1070;
+}
+
+#mainNav {
+	font-family: Montserrat, Helvetica Neue, Helvetica, Arial, sans-serif;
+	font-size: 1rem;
+    /* box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2); */
+    transition: all 1.2s;
+	background-color: rgb(237, 242, 247);
+	text-transform: uppercase;
+}
+
+.scrollUp {
+    transform: translateY(-92px);
+}
+
+#mainNav .nav-link {
+    color: #191919;
+}
+
+#mainNav .nav-link:hover {
+    color: #22577f;
+}
+
+#mainNav button {
+    border: none;
+}
+
+.wrapper-menu {
+  width: 30px;
+  height: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: transform 330ms ease-out;
+}
+
+.wrapper-menu.open {
+  transform: rotate(-45deg);  
+}
+
+.line-menu {
+  background-color: #22577f;
+  border-radius: 5px;
+  width: 100%;
+  height: 3px;
+}
+
+.line-menu.half {
+  width: 50%;
+}
+
+.line-menu.start {
+  transition: transform 330ms cubic-bezier(0.54, -0.81, 0.57, 0.57);
+  transform-origin: right;
+}
+
+.open .line-menu.start {
+  transform: rotate(-90deg) translateX(3px);
+}
+
+.line-menu.end {
+  align-self: flex-end;
+  transition: transform 330ms cubic-bezier(0.54, -0.81, 0.57, 0.57);
+  transform-origin: left;
+}
+
+.open .line-menu.end {
+  transform: rotate(-90deg) translateX(-3px);
+}
+
+#mainNav .navbar-brand {
+	color: #22577f;
+}
+
+.jumbotron {
+	background-color: #40434E;
+	color: lightyellow;
+	padding: 2rem 1rem
+}
+
+ /* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+	.jumbotron {
+		width: 75%;
+		margin: 50px auto
+	}
+}
+
+ /* Extra large devices (X-large desktops, 1700px and up) */
+@media (min-width: 1700px) {
+	.jumbotron {
+		width: 50%;
+		margin: 50px auto
+	}
 }
 
 /* Cards */
