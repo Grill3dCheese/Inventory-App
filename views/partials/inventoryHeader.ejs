@@ -27,53 +27,67 @@
 					aria-controls="navLinks"
 					aria-label="Toggle navigation"
 				>
-						<a href="#page-top" class="navbar-brand"><img src="/assets/img/sdLogo.png" alt="Sign Dreamers logo image" loading="lazy"></a>
+					<a href="#page-top" class="navbar-brand"
+						><img
+							src="/assets/img/sdLogo.png"
+							alt="Sign Dreamers logo image"
+							loading="lazy"
+					/></a>
 				</button>
 				<div id="navLinks" class="sidenav stopLight-gradient">
 					<div class="container">
-					<div class="row justify-content-center">
-						<div class="col-12">
-							<div class="card card-background-alpha">
-								<h3 id="greeting" class="card-header border-0 text-center"></h3>
-								<h3 class="card-header border-0 text-center"><%= currentUser.username %></h3>
-								<div class="card-body text-center profileImg">
-									<img src="https://cdn0.iconfinder.com/data/icons/avatar-78/128/12-512.png" alt="Not Avail." class="imgShadow">
-									<h2></h2>
+						<div class="row justify-content-center">
+							<div class="col-12">
+								<div class="card card-background-alpha">
+									<h3 id="greeting" class="card-header border-0 text-center"></h3>
+									<h3 class="card-subhead border-0 text-center">
+										<%= currentUser.username %>
+									</h3>
+									<div class="card-body text-center profileImg">
+										<img
+											src="https://cdn0.iconfinder.com/data/icons/avatar-78/128/12-512.png"
+											alt="User Profile Image"
+											class="imgShadow"
+										/>
+										<ul class="nav justify-content-center">
+											<li class="nav-item js-scroll-trigger">
+												<a href="/" class="nav-link js-scroll-trigger"
+													>Home</a
+												>
+											</li>
+											<li class="nav-item js-scroll-trigger">
+												<a class="nav-link js-scroll-trigger" href="/blog"
+													>Blog</a
+												>
+											</li>
+										</ul>
+										<ul class="nav ml-md-auto justify-content-center">
+											<% if(!currentUser){ %>
+											<li class="nav-item">
+												<a class="nav-link" href="/login">Login</a>
+											</li>
+											<% } else { %>
+											<li class="nav-item">
+												<a class="nav-link" href="#"
+													>Hi, <%= currentUser.username %>!</a
+												>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" href="/logout">Logout</a>
+											</li>
+											<% } %>
+										</ul>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-						</div>
-					<ul class="nav justify-content-center">
-						<li class="nav-item js-scroll-trigger">
-							<a href="/" class="nav-link js-scroll-trigger">Home</a>
-						</li>
-						<li class="nav-item js-scroll-trigger">
-							<a class="nav-link js-scroll-trigger" href="/blog">Blog</a>
-						</li>
-					</ul>
-					<ul class="nav ml-md-auto justify-content-center">
-						<% if(!currentUser){ %>
-						<li class="nav-item">
-							<a class="nav-link" href="/login">Login</a>
-						</li>
-						<% } else { %>
-						<li class="nav-item">
-							<a class="nav-link" href="#"
-								>Hi, <%= currentUser.username %>!</a
-							>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="/logout">Logout</a>
-						</li>
-						<% } %>
-					</ul>
 				</div>
 				<ul class="nav mx-auto">
 					<li class="nav-item active">
 						<a href="#" class="main-link"><i class="fas fa-font"></i></a>
 					</li>
-					<hr class="navHR">
+					<hr class="navHR" />
 					<li class="nav-item">
 						<a href="#" class="main-link"><i class="fas fa-laugh-beam"></i></a>
 					</li>
@@ -89,24 +103,31 @@
 				</ul>
 			</div>
 		</nav>
-	
-	        <div class="container">
+
+		<div class="container">
 			<div class="row justify-content-center">
-            <% if(error && error.length > 0){ %>
-                <div class="alert alert-danger text-center alert-dismissible fade show navIndex" role="alert">
-                    <%= error %>
-  					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    					<span aria-hidden="true">&times;</span>
-  					</button>
-                </div>
-            <% } %>
-            <% if(success && success.length > 0){ %>
-                <div class="alert alert-success text-center alert-dismissible fade show navIndex" role="alert">
-                    <%= success %>
-  					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    					<span aria-hidden="true">&times;</span>
-  					</button>
-                </div>
-            <% } %>
+				<% if(error && error.length > 0){ %>
+				<div
+					class="alert alert-danger text-center alert-dismissible fade show navIndex"
+					role="alert"
+				>
+					<%= error %>
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<% } %> <% if(success && success.length > 0){ %>
+				<div
+					class="alert alert-success text-center alert-dismissible fade show navIndex"
+					role="alert"
+				>
+					<%= success %>
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<% } %>
 			</div>
-        </div>
+		</div>
+	</body>
+</html>
