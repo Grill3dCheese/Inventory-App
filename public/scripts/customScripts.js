@@ -24,7 +24,7 @@ function timeCheck() {
 if (curHr < 12) {
   greet.innerText = '🌅 \n Good Morning,';
 } else if (curHr < 18) {
-  greet.innerText = '☀ \n Good Afternoon,';
+  greet.innerText = '☀️ \n Good Afternoon,';
 } else {
   greet.innerText = '🌙 \n Good Evening,';
 	}
