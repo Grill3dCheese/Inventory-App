@@ -38,6 +38,11 @@ h3 {
 	text-transform: uppercase
 }
 
+.card-header:first-of-type {
+	padding-top: 2rem;
+	padding-bottom: -2rem;
+}
+
 a {
 	transition: all .3s ease-in-out
 }
@@ -123,7 +128,7 @@ background: linear-gradient(to bottom, #f7797d, #FBD786, #C6FFDD); /* W3C, IE 10
 	z-index: 1070;
 }
 
-/* Navigation */
+/* Top Navigation */
 
 #mainNav {
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
@@ -145,11 +150,6 @@ background: linear-gradient(to bottom, #f7797d, #FBD786, #C6FFDD); /* W3C, IE 10
     border: none;
 }
 
-#mainNav img {
-	width: 40px;
-	height: 40px
-}
-
 hr.navHR {
   	border: 0;
   	height: 1px;
@@ -164,13 +164,22 @@ hr.navHR {
 	margin: 0
 }
 
-/* .main-link {
-	border-right: 5px red solid;	
-} */
+.navbar-brand img {
+	width: 40px;
+	height: 40px
+}
+
+.main-link {
+	display: block;
+	padding: .75rem 1rem;
+	font-size: 30px
+}
 
 .navbar-toggler {
 	padding: 0
 }
+
+/* Side Menu/Navigation */
 
 .sidenav {
 	height: 100%;
@@ -208,10 +217,15 @@ hr.navHR {
 	  margin-left: 50px;
 }
 
-.main-link {
-	display: block;
-	padding: .75rem 1rem;
-	font-size: 30px
+.profilePad {
+	padding: .5rem 0;
+}
+
+.profileImg img {
+	width: 150px;
+	/* margin-top: -130px; */
+	border: 5px solid rgba(255, 250, 240, 0.5);
+	border-radius: 50%
 }
 
 .scrollUp {
@@ -268,6 +282,10 @@ hr.navHR {
 
 .card-background {
 	background-color: floralwhite
+}
+
+.card-background-alpha {
+	background-color: rgba(255, 250, 240, 0.5)
 }
 
 .view {
@@ -373,7 +391,7 @@ hr.navHR {
 		font-size: 24px
 	  }
 	  
-	  #mainNav img {
+	  .navbar-brand img {
 		width: 30px;
 		height: 30px
 }
