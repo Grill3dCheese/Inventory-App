@@ -6,9 +6,15 @@ const greet = document.querySelector("#greeting");
 const today = new Date();
 const curHr = today.getHours();
 
+window.setTimeout(function() {
+    $(".alert").slideUp(500, function(){
+        $(this).remove(); 
+    });
+}, 2000);
+
 function openNav() {
-	navLinks.style.width = "250px";
-	document.body.style.marginLeft = "250px";
+	navLinks.style.width = "270px";
+	document.body.style.marginLeft = "270px";
 	document.body.style.backgroundColor = "rgba(0, 0, 0, 0.4)";
 	return;
 }
