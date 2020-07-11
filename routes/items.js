@@ -14,4 +14,8 @@ router.get("/inventory", middleware.isLoggedIn, function(req, res){
     });
 });
 
+// Add item to inventory database routing
+// CREATE - add new item
+router.post("/", middleware.isLoggedIn)
+
 module.exports = router;
