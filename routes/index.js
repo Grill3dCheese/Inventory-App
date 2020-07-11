@@ -16,7 +16,7 @@ router.get("/", function(req, res){
 router.post("/login", passport.authenticate("local", 
     {
         successRedirect: "/inventory",
-		successFlash: "Welcome back, you have successfully logged in.",
+		successFlash: "Welcome back, you've successfully logged in.",
         failureRedirect: "/",
 		failureFlash: true
         
@@ -45,7 +45,7 @@ router.post("/register", function(req, res){
             return res.render("register", {error: err.message});
        }
        passport.authenticate("local")(req, res, function(){
-            req.flash("success", "Hi, " + user.username + "! Thanks for creating a new account. Welcome to the Sign Dreamers Inventory Application!"); 
+            req.flash("success", "Hi, " + user.firstName + "! Thanks for creating a new account. Welcome to the Sign Dreamers Inventory Application!"); 
             res.redirect("/inventory"); 
        });
     });
@@ -99,10 +99,10 @@ router.post('/forgot', function(req, res, next) {
       var mailOptions = {
         to: user.email,
         from: 'hello@keithmckenna.com',
-        subject: 'Sign Dreamers inventory app Password Reset',
-        text: 'You are receiving this because you (or someone else) have requested the reset of the password for your account.\n\n' +
+        subject: 'Sign Dreamers inventory app password reset',
+        text: 'You are receiving this because you (or someone else) has requested the reset of the password for your inventory account.\n\n' +
           'Please click on the following link, or paste this into your browser to complete the process:\n\n' +
-          'http://' + req.headers.host + '/reset/' + token + '\n\n' +
+          'https://' + req.headers.host + '/reset/' + token + '\n\n' +
           'If you did not request this, please ignore this email and your password will remain unchanged.\n'
       };
       smtpTransport.sendMail(mailOptions, function(err) {
@@ -167,7 +167,7 @@ router.post('/reset/:token', function(req, res) {
         from: 'hello@keithmckenna.com',
         subject: 'Your Sign Dreamers inventory app password has been changed',
         text: 'Hello,\n\n' +
-          'This is a confirmation that the password for your blog account ' + user.email + ' has just been changed.\n'
+          'This is a confirmation that the password for your inventory account associated with: ' + user.email + ' has just been changed.\n'
       };
       smtpTransport.sendMail(mailOptions, function(err) {
         req.flash('success', 'Success! Your password has been changed.');
