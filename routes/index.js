@@ -36,9 +36,13 @@ router.post("/register", function(req, res){
             email: req.body.email
         });
         
-    if(req.body.adminCode === process.env.SECRETCODE) {
-        newUser.isAdmin = true;
-    }
+    if(req.body.adminCode != process.env.SECRETCODE) {
+        req.flash("error", "Apologies, that admin code did not match our records. Please try again.");
+		return res.redirect("back");
+    } else {
+		newUser.isAdmin = true;
+	}
+	
     User.register(newUser, req.body.password, function(err, user){
        if(err){
             console.log(err);
