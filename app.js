@@ -50,7 +50,7 @@ app.use(function(req, res, next){
 });
 
 app.use(indexRoutes);
-app.use(itemRoutes);
+app.use("/inventory", itemRoutes);
 
 app.listen(process.env.PORT || 3000, process.env.IP, function(){
 	console.log("The server has started.");
