@@ -61,4 +61,43 @@ router.get("/:id", function(req, res){
 	});
 });
 
+// edit item route
+router.get("/:id/edit", middleware.isLoggedIn, function(req, res){
+        Item.findById(req.params.id, function(err, foundItem){
+            if(err || !foundItem){
+                req.flash("error", "Apologies, that item was not found!");
+                res.redirect("back");
+            } else {
+                res.render("inventory/edit", {item: foundItem});
+            }
+        });
+});
+
+// update item route
+router.put("/:id", middleware.isLoggedIn, function(req, res){
+
+    Item.findByIdAndUpdate(req.params.id, req.body.item, function(err, item){
+        if(err){
+            req.flash("error", err.message);
+            res.redirect("back");
+        } else {
+            req.flash("success","Item has been successfully updated!");
+            res.redirect("/inventory/" + item._id);
+        }
+    });
+  });
+
+// destroy item route
+router.delete("/:id", middleware.isLoggedIn, function(req, res){
+    Item.findByIdAndRemove(req.params.id, function(err){
+        if(err){
+            req.flash("error", "Hmmm, something went wrong. That item was not deleted.");
+            res.redirect("/inventory");
+        } else {
+            req.flash("success", "*Entry successfully deleted!");
+            res.redirect("/inventory");
+        }
+    });
+});
+
 module.exports = router;
