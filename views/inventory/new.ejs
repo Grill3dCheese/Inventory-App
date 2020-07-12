@@ -1,0 +1,89 @@
+<%- include('../partials/inventoryHeader'); -%>
+
+<header class="masthead">
+	<div class="container h-100">
+		<div class="row h-100 justify-content-center align-items-center">
+			<div class="col-sm-12 col-md-8">
+				<div class="card">
+					<h1 class="card-header stPat-gradient text-center py-4">Add New Item</h1>
+					<div class="card-body px-lg-5 pt-0">
+						<form action="/inventory" method="POST">
+							<div class="cForm">
+								<input
+									class="form-control"
+									type="text"
+									name="name"
+									id="name"
+									placeholder="Item Name"
+									required
+								/>
+							</div>
+							<div class="cForm">
+								<input
+									class="form-control"
+									type="number"
+									name="quantity"
+									id="quantity"
+									placeholder="Current Quantity"
+									step="1"
+									min="0"
+									max="10"
+									pattern="\d*"
+									required
+								/>
+							</div>
+							<div class="cForm">
+								<select class="form-control" name="category" id="category" required>
+									<option value="">--Please choose an option--</option>
+									<option value="balloon">Balloon</option>
+									<option value="graphic">Graphic</option>
+									<option value="letter">Letter</option>
+									<option value="number">Number</option>
+									<option value="star">Star</option>
+								</select>
+							</div>
+							<div class="cForm">
+								<input
+									class="form-control"
+									type="text"
+									name="tag"
+									id="tag"
+									placeholder="Item's Tags"
+									required
+								/>
+							</div>
+							<div class="cForm">
+								<input
+									class="form-control"
+									type="text"
+									name="image"
+									id="image"
+									placeholder="Image URL"
+									required
+								/>
+							</div>
+							<div class="cForm">
+								<textarea
+									class="form-control mod-textarea"
+									name="description"
+									id="description"
+									rows="5"
+									placeholder="Item's Description"
+									required
+								></textarea>
+							</div>
+							<div class="cForm">
+								<button class="btn btn-lg btn-outline-dark btn-block">
+									Submit!
+								</button>
+							</div>
+						</form>
+						<a href="/inventory">Go Back</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+<%- include('../partials/footer'); -%>
