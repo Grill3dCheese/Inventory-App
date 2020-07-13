@@ -1,3 +1,100 @@
-<h1>
-	Welcome to the PANIC ROOM!
-</h1>
+<%- include('../partials/inventoryHeader'); -%>
+
+<div class="container">
+	<div class="row justify-content-center">
+		<div class="col-md-4 mb-5">
+			<div class="list-group list-group-flush imgShadow">
+				<li class="list-group-item shampoo-gradient">
+					<div class="list-icon"></div>
+					<i class="fas fa-heading mr-4 pr-3"></i>
+					<%= item.name %>
+				</li>
+				<li class="list-group-item">
+					<div class="list-icon"></div>
+					<i class="fas fa-signature mr-4 pr-3"></i>Submitted by:
+						<a href="/users/<%= item.author.id %>">
+							<%= item.author.username %>
+						</a>
+				</li>
+				<li class="list-group-item">
+					<div class="list-icon"></div>
+					<i class="fas fa-clock mr-4 pr-3"></i>
+					<%= moment(item.createdAt).fromNow() %>
+				</li>
+			</div>
+		</div>
+		<div class="col-md-8">
+			<div class="thumbnail">
+				<img class="img-responsive imgShadow rounded" src="<%= item.image %>">
+				<div class="caption-full">
+					<h1>
+						<%= item.name %>
+					</h1>
+					<h5>
+						<em><%= item.description %></em>
+					</h5>
+					<p>
+						<%= moment(item.createdAt).format('L'); %>
+					</p>
+					<p>
+						<%- item.entry %>
+					</p>
+					<% if(currentUser && item.author.id.equals(currentUser._id) || currentUser && currentUser.isAdmin){ %>
+						<a class="btn border-0 lemonade-gradient" href="/blog/<%= item._id %>/edit">Edit</a>
+						<form class="delete-form" action="/blog/<%= item._id %>?_method=DELETE" method="POST">
+							<button class="btn border-0 forgot-gradient">Delete</button>
+						</form>
+						<% } %>
+				</div>
+			</div>
+			<!--Comment section-->
+
+			<div class="well">
+				<!--Setting up the add new comment button that is used for collapsing-->
+				<div class="text-right">
+					<a class="btn border-0 backButton" href="/blog">Go Back</a>
+					<a class="btn border-0 stPat-gradient pull-right" role="button" data-toggle="collapse" href="#collapseComment" aria-expanded="false" aria-controls="collapseComment">
+						<i class="far fa-plus-square mr-1"></i> Add new comment</a>
+				</div>
+				<!--Comment section title-->
+				<h4 class="my-5">
+					<i class="far fa-comment mr-1"></i>
+					<strong>Comments:
+					</strong>
+				</h4>
+
+				<!--Collapse Add a comment form START-->
+				<div class="collapse" id="collapseComment">
+					<div class="well pt-5">
+						<% if(!currentUser) { %>
+							<!--If the user is not logged in, direct him to the login page-->
+							<h5>You need to login before you can comment.
+								<a href="/login">Click here</a> to go to the login page.</h5>
+							<% } %>
+								<% if(currentUser) { %>
+									<!--If the user is logged in, show the new comment form-->
+									<h4>Leave your comment below:
+									</h4>
+									<form id="add-comment-form" action="/blog/<%= item._id %>/comments" method="POST">
+										<div class="form-group">
+											<input class="form-control" type="text" disabled value="<%= currentUser.username %>">
+										</div>
+										<div class="form-group">
+											<textarea class="form-control" name="comment[text]" placeholder="Leave your comment here..." form="add-comment-form" rows="5" cols="70"></textarea>
+										</div>
+										<div class="form-group">
+											<button class="btn border-0 stPat-gradient btn-xs"> <i class="far fa-comment-dots"></i> Comment
+											</button>
+										</div>
+									</form>
+									<% } %>
+					</div>
+				</div>
+				<!--Collapse Add a comment form END-->
+				<hr>
+
+		</div>
+	</div>
+</div>
+   
+<%- include('../partials/footer'); -%>
