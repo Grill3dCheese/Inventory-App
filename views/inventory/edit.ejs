@@ -1,0 +1,35 @@
+<%- include('../partials/inventoryHeader'); -%>
+
+<div class="container">
+	<div class="row justify-content-center topPadding">
+		<div class="col-sm-12 col-md-8">
+			<div class="card">
+				<h1 class="card-header stPat-gradient text-center py-4">Edit
+					"<%= item.name %>"
+				</h1>
+				<div class="card-body px-lg-5 pt-0">
+					<form action="/inventory/<%= item._id %>?_method=PUT" method="POST">
+						<div class="mod-form">
+							<input class="form-control" type="text" name="item[name]" id="name" value="<%= item.name %>" required>
+						</div>
+						<div class="mod-form">
+							<input class="form-control" type="text" name="item[description]" id="description" value="<%= item.description %>" required>
+						</div>
+						<div class="mod-form">
+							<input class="form-control" type="text" name="item[image]" id="image" value="<%= item.image %>" required>
+						</div>
+						<div class="mod-form">
+							<textarea class="form-control mod-textarea" name="item[entry]" id="entry" rows="5" required><%= item.entry %></textarea>
+						</div>
+						<div class="mod-form">
+							<button class="btn btn-lg btn-outline-dark btn-block">Submit!</button>
+						</div>
+					</form>
+					<a href="/inventory/<%= item._id %>">Go Back</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<%- include('../partials/footer'); -%>
