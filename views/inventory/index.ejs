@@ -1,30 +1,16 @@
 <%- include('../partials/inventoryHeader'); -%>
 
 <div class="container-fluid">
-	<% if(currentUser && currentUser.isAdmin == true){ %>
-		<div class="jumbotron text-center">
-			<div class="container">
-				<div class="row justify-content-center">
-					<h1>Welcome,
-						<%= currentUser.firstName %>!</h1>
-				</div>
-				<div class="row justify-content-center">
-					<p>Add additional items to the inventory database below.</p>
-					<i class="fas fa-chevron-down"></i>
-				</div>
 				<div class="row justify-content-center">
 					<p>
 						<a class="btn border-0 shampoo-gradient" href="/inventory/new" role="button">
 							<i class="fas fa-pencil-alt"></i> Add New Item</a>
 					</p>
-				</div>
-			</div>
 		</div>
-		<% } %>
 
 			<div class="row">
 				<% items.reverse().forEach(function(item){ %>
-					<div class="col-md-6 col-lg-4 col-xl-2">
+					<div class="col-6 col-md-4 col-lg-2">
 						<div class="card card-overlay slender mb-4">
 							<div class="view view-overlay">
 							<img class="card-img-top" src="<%= item.image %>">
