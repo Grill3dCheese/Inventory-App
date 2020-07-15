@@ -14,8 +14,41 @@ router.get("/", middleware.isLoggedIn, function(req, res){
     });
 });
 
+// numbers & letters route
+router.get("/numlet", middleware.isLoggedIn, function(req, res){
+	Item.find({$or:[{category: "number"},{category:"letter"}]}, function(err, items){
+		if(err){
+			console.log(err);
+		} else {
+			res.render("inventory/index", {items: items, page: "items"});
+		}
+	});
+});
+
+// graphics route
+router.get("/graphic", middleware.isLoggedIn, function(req, res){
+	Item.find({category: "graphic"}, function(err, items){
+		if(err){
+			console.log(err);
+		} else {
+			res.render("inventory/index", {items: items, page: "items"});
+		}
+	});
+});
+
 // stars route
 router.get("/star", middleware.isLoggedIn, function(req, res){
+	Item.find({category: "star"}, function(err, items){
+		if(err){
+			console.log(err);
+		} else {
+			res.render("inventory/index", {items: items, page: "items"});
+		}
+	});
+});
+
+// balloons route
+router.get("/balloon", middleware.isLoggedIn, function(req, res){
 	Item.find({category: "balloon"}, function(err, items){
 		if(err){
 			console.log(err);
