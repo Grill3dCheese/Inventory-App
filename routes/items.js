@@ -14,6 +14,17 @@ router.get("/", middleware.isLoggedIn, function(req, res){
     });
 });
 
+// stars route
+router.get("/star", middleware.isLoggedIn, function(req, res){
+	Item.find({category: "balloon"}, function(err, items){
+		if(err){
+			console.log(err);
+		} else {
+			res.render("inventory/index", {items: items, page: "items"});
+		}
+	});
+});
+
 // Add item to inventory database routing
 // CREATE - add new item
 router.post("/", middleware.isLoggedIn, function(req, res){
