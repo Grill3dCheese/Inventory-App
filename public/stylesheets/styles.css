@@ -51,6 +51,14 @@ p {
 	margin: 10px 0
 }
 
+.col-6.col-md-4.col-lg-2 {
+	padding: 0 5px
+}
+
+.container-fluid {
+	padding-top: 65px
+}
+
 .masthead {
 	height: 100%;
   	min-height: 500px;
@@ -98,10 +106,6 @@ background: linear-gradient(to bottom, #f7797d, #FBD786, #C6FFDD); /* W3C, IE 10
 
 .btn.shampoo-gradient {
 	color: #40434E
-}
-
-.container-fluid {
-	padding: 65px 35px 0 35px;
 }
 
 .btn.focus, .btn:focus {
