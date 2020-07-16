@@ -1,38 +1,38 @@
 <%- include('../partials/inventoryHeader'); -%>
 
 <div class="container-fluid">
-				<div class="row justify-content-center">
-					<p>
-						<a class="btn border-0 shampoo-gradient" href="/inventory/new" role="button">
-							<i class="fas fa-pencil-alt"></i> Add New Item</a>
-					</p>
-		</div>
+	<div class="row justify-content-center">
+		<a class="btn border-0 shampoo-gradient mt-3" href="/inventory/new" role="button">
+			<i class="fas fa-pencil-alt"></i> Add New Item</a>
+	</div>
 
-			<div class="row">
-				<% items.reverse().forEach(function(item){ %>
-					<div class="col-6 col-md-4 col-lg-2">
-						<div class="card card-overlay slender mb-4">
-							<div class="view view-overlay">
-							<img class="card-img-top" src="<%= item.image %>">
-								</div>
-							<div class="card-body text-center">
-								<h4 class="card-title">
-									<%= item.name %>
-								</h4>
-								<p class="card-text">
-									<%= item.description %>
-								</p>
-							<p>
-								<a href="/inventory/<%= item._id %>" class="btn border-0 shampoo-gradient">Read More...</a>
-							</p>
-								</div>
-							<div class="card-footer text-muted text-center">
-								<%= moment(item.createdAt).fromNow() %>
-							</div>
-						</div>
-					</div>
-					<% }); %>
+	<div class="row">
+		<% items.reverse().forEach(function(item){ %>
+		<div class="col-6 col-md-4 col-lg-2">
+			<div class="card card-overlay slender mb-3">
+				<div class="view view-overlay">
+					<img class="card-img-top" src="<%= item.image %>" />
+				</div>
+				<div class="card-body text-center">
+					<h4 class="card-title">
+						<%= item.name %>
+					</h4>
+					<p class="card-text">
+						<%= item.description %>
+					</p>
+					<p>
+						<a href="/inventory/<%= item._id %>" class="btn border-0 shampoo-gradient"
+							>Read More...</a
+						>
+					</p>
+				</div>
+				<div class="card-footer text-muted text-center">
+					<%= moment(item.createdAt).fromNow() %>
+				</div>
 			</div>
+		</div>
+		<% }); %>
+	</div>
 </div>
 
 <%- include('../partials/footer'); -%>
