@@ -38,6 +38,16 @@ h3 {
 	text-transform: uppercase
 }
 
+h4 {
+	font-family: Raleway, Helvetica Neue, Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	font-weight: 700;
+	margin: 0;
+	letter-spacing: .12em;
+	line-height: 1.6em;
+	text-transform: uppercase
+}
+
 a {
 	transition: all .3s ease-in-out
 }
@@ -48,7 +58,7 @@ a:hover {
 }
 
 p {
-	margin: 10px 0
+	margin: 5px 0
 }
 
 .col-6.col-md-4.col-lg-2 {
@@ -269,6 +279,14 @@ hr.navHR {
 	background-color: rgba(255, 250, 240, 0.5)
 }
 
+.card-title {
+	margin: 0
+}
+
+.item-card img {
+	height: 100px
+}
+
 .card-subhead {
 	padding-bottom: 5rem;
     margin-bottom: 0;
@@ -278,6 +296,16 @@ hr.navHR {
 .card-body {
     border-radius: 0 !important;
 }
+
+.card-text {
+	font-style: italic;
+	font-size: 10px;
+	letter-spacing: .1em;
+	line-height: 1.6em;
+	text-transform: uppercase
+}
+
+/* Item Card */
 
 .item-card {
 	border: 1px solid rgba(0, 0, 0, 0.1);
@@ -289,6 +317,13 @@ hr.navHR {
 
 .item-body {
 	padding: 1.25rem 0 1.5rem 0;
+}
+
+.quantity {
+	font-size: 12px;
+	letter-spacing: .1em;
+	line-height: 1.6em;
+	text-transform: uppercase
 }
 
 /* Forms */
@@ -367,7 +402,11 @@ hr.navHR {
   and (min-device-width: 300px) 
   and (max-device-width: 375px) 
   and (-webkit-min-device-pixel-ratio: 2)
-  and (orientation: portrait) { 
+  and (orientation: portrait) {
+	  h4 {
+	  	font-size: 12px
+	  }
+	  
 	  .main-link {
 	  	padding: .75rem .8rem;
 		font-size: 24px
@@ -376,5 +415,5 @@ hr.navHR {
 	  .navbar-brand img {
 		width: 30px;
 		height: 30px
-}
+	}
 }
