@@ -284,7 +284,8 @@ hr.navHR {
 }
 
 .item-card img {
-	height: 100px
+	height: 80%;
+	width: 100%
 }
 
 .card-subhead {
