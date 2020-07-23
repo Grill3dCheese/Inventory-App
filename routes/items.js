@@ -91,25 +91,11 @@ router.get("/new", middleware.isLoggedIn, function(req, res){
 	res.render("inventory/new");
 });
 
-// Show Item
-router.get("/:id", function(req, res){
-	Item.findById(req.params.id).populate("comments").exec(function(err, foundItem){
-		if(err || !foundItem){
-			console.log(err);
-			req.flash("error", "Sorry, the item you are looking for does not exist.");
-			res.redirect("/inventory");
-		} else {
-			console.log(foundItem);
-			res.render("inventory/show", {item: foundItem});
-		}
-	});
-});
-
 // edit item route
 router.get("/:id/edit", middleware.isLoggedIn, function(req, res){
         Item.findById(req.params.id, function(err, foundItem){
             if(err || !foundItem){
-                req.flash("error", "Apologies, that item was not found!");
+                req.flash("error", "Sorry, the item cannot be edited at this time.");
                 res.redirect("back");
             } else {
                 res.render("inventory/edit", {item: foundItem});
@@ -126,7 +112,7 @@ router.put("/:id", middleware.isLoggedIn, function(req, res){
             res.redirect("back");
         } else {
             req.flash("success","Item has been successfully updated!");
-            res.redirect("/inventory/" + item._id);
+            res.redirect("/inventory");
         }
     });
   });
