@@ -11,15 +11,13 @@
 		<div class="col-6 col-md-4 col-lg-2">
 			<div class="item-card card-overlay slender mb-3">
 				<div class="view view-overlay">
-					<a href="/inventory/<%= item._id %>">
 					<img class="card-img-top" src="<%= item.image %>" />
-					</a>
 				</div>
 				<div class="item-body text-center">
 					<h4 class="card-title">
 						<%= item.name %>
 					</h4>
-					<p class="quantity">
+					<p class="quantity justify-content-end">
 						<%= item.quantity %> available
 					</p>
 					<p class="card-text">
@@ -28,14 +26,9 @@
 					</p>
 				</div>
 				<div class="card-footer text-muted text-center">
-					<div class="row align-items-center">
-					<div class="col-6 border-right">
-						&ndash; 1
-					</div>
-					<div class="col-6">
-						+ 1
-					</div>
-						</div>
+					<a href="/inventory/<%= item._id %>/edit" class="btn border-0 shampoo-gradient">
+						Edit Item
+					</a>
 				</div>
 			</div>
 		</div>
