@@ -9,7 +9,11 @@ var crypto = require("crypto");
 
 // root route - login form
 router.get("/", function(req, res){
-	res.render("login", {page: "login"});
+	if (req.isAuthenticated()) {
+		res.redirect("/inventory");
+	} else {
+		res.render("login", {page: "login"});
+	}
 });
 
 // login post route logic
