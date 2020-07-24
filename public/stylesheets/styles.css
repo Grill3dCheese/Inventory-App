@@ -1,3 +1,4 @@
+/* All */
 body {
 	font-family: Montserrat, Helvetica Neue, Helvetica, Arial, sans-serif;
 	font-size: 16px;
@@ -61,12 +62,21 @@ p {
 	margin: 5px 0
 }
 
+.btn.focus, .btn:focus {
+	box-shadow: none;
+}
+
 .col-6.col-md-4.col-lg-2 {
 	padding: 0 5px
 }
 
 .container-fluid {
 	padding-top: 65px
+}
+
+.imgShadow {
+	-webkit-box-shadow:0 12px 15px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19) !important;
+	box-shadow:0 12px 15px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19) !important
 }
 
 .masthead {
@@ -116,15 +126,6 @@ background: linear-gradient(to bottom, #f7797d, #FBD786, #C6FFDD); /* W3C, IE 10
 
 .btn.shampoo-gradient {
 	color: #40434E
-}
-
-.btn.focus, .btn:focus {
-	box-shadow: none;
-}
-
-.imgShadow {
-	-webkit-box-shadow:0 12px 15px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19) !important;
-	box-shadow:0 12px 15px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19) !important
 }
 
 /* Flash Messaging */
@@ -283,11 +284,6 @@ hr.navHR {
 	margin: 0
 }
 
-.item-card img {
-	height: 80%;
-	width: 100%
-}
-
 .card-subhead {
 	padding-bottom: 5rem;
     margin-bottom: 0;
@@ -316,6 +312,11 @@ hr.navHR {
 	margin-top: 1.25rem;
 }
 
+.item-card img {
+	height: 150px;
+	width: 100%
+}
+
 .item-body {
 	padding: 1.25rem 0 1.5rem 0;
 }
@@ -325,6 +326,23 @@ hr.navHR {
 	letter-spacing: .1em;
 	line-height: 1.6em;
 	text-transform: uppercase
+}
+
+.edit-btn {
+	color: #000;
+	border: 1px solid #000;
+	padding: 20px 20px;
+	font-weight: 900;
+	font-size: 10px;
+	letter-spacing: .16em;
+	text-transform: uppercase;
+	transition: all .3s ease-in-out
+}
+
+.edit-btn:hover,
+.edit-btn:focus {
+	background-color: red;
+	transition: all .3s ease-in-out
 }
 
 /* Forms */
