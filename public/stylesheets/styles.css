@@ -284,6 +284,10 @@ hr.navHR {
 	margin: 0
 }
 
+.card-header {
+	padding: .75rem 1.25rem 0 1.25rem;
+}
+
 .card-subhead {
 	padding-bottom: 5rem;
     margin-bottom: 0;
@@ -296,7 +300,7 @@ hr.navHR {
 
 .card-text {
 	font-style: italic;
-	font-size: 10px;
+	font-size: 8px;
 	letter-spacing: .1em;
 	line-height: 1.6em;
 	text-transform: uppercase
@@ -361,7 +365,7 @@ hr.navHR {
     border-radius: 0;
 }
 
-.cForm input:not([type]), .cForm input[type="text"]:not(.browser-default), .cForm input[type="number"]:not(.browser-default), .cForm input[type="password"]:not(.browser-default), .cForm input[type="email"]:not(.browser-default), .cForm input[type="url"]:not(.browser-default), .cForm textarea.mod-textarea {
+.cForm input:not([type]), .cForm input[type="text"]:not(.browser-default), .cForm input[type="number"]:not(.browser-default), .cForm input[type="password"]:not(.browser-default), .cForm input[type="email"]:not(.browser-default), .cForm input[type="url"]:not(.browser-default), .cForm textarea.mod-textarea, .cForm select {
     -webkit-box-sizing: content-box;
     box-sizing: content-box;
     background-color: transparent;
@@ -377,13 +381,13 @@ hr.navHR {
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
 }
 
-.cForm input:not([type]):focus:not([readonly]),.cForm input[type="text"]:not(.browser-default):focus:not([readonly]),.cForm input[type="number"]:not(.browser-default):focus:not([readonly]),.cForm input[type="password"]:not(.browser-default):focus:not([readonly]),.cForm input[type="email"]:not(.browser-default):focus:not([readonly]),.cForm input[type="url"]:not(.browser-default):focus:not([readonly]),.cForm textarea.contact-textarea:focus:not([readonly]) {
+.cForm input:not([type]):focus:not([readonly]),.cForm input[type="text"]:not(.browser-default):focus:not([readonly]),.cForm input[type="number"]:not(.browser-default):focus:not([readonly]),.cForm input[type="password"]:not(.browser-default):focus:not([readonly]),.cForm input[type="email"]:not(.browser-default):focus:not([readonly]),.cForm input[type="url"]:not(.browser-default):focus:not([readonly]),.cForm textarea.mod-textarea:focus:not([readonly]),.cForm select:focus:not([readonly]) {
     border-bottom: 1px solid #22577f;
     -webkit-box-shadow: 0 1px 0 0 #22577f;
     box-shadow: 0 1px 0 0 #22577f
 }
 
-.cForm input:not([type]):focus:not([readonly])+label,.cForm input[type="text"]:not(.browser-default):focus:not([readonly])+label,.cForm input[type="number"]:not(.browser-default):focus:not([readonly])+label,.cForm input[type="password"]:not(.browser-default):focus:not([readonly])+label,.cForm input[type="email"]:not(.browser-default):focus:not([readonly])+label,.cForm input[type="url"]:not(.browser-default):focus:not([readonly])+label,.cForm textarea.contact-textarea:focus:not([readonly])+label {
+.cForm input:not([type]):focus:not([readonly])+label,.cForm input[type="text"]:not(.browser-default):focus:not([readonly])+label,.cForm input[type="number"]:not(.browser-default):focus:not([readonly])+label,.cForm input[type="password"]:not(.browser-default):focus:not([readonly])+label,.cForm input[type="email"]:not(.browser-default):focus:not([readonly])+label,.cForm input[type="url"]:not(.browser-default):focus:not([readonly])+label,.cForm textarea.mod-textarea:focus:not([readonly])+label,.cForm select:focus:not([readonly])+label {
     color: #22577f
 }
 
