@@ -9,7 +9,7 @@
 	<div class="row">
 		<% items.reverse().forEach(function(item){ %>
 		<div class="col-6 col-md-4 col-lg-2">
-			<div class="item-card card-overlay slender mb-3">
+			<div class="item-card card-overlay slender mb-1">
 				<div class="view view-overlay">
 					<img class="card-img-top" src="<%= item.image %>" />
 				</div>
@@ -26,7 +26,7 @@
 					</p>
 				</div>
 				<div class="card-footer text-muted text-center">
-					<a href="/inventory/<%= item._id %>/edit" class="btn border-0 shampoo-gradient">
+					<a href="/inventory/<%= item._id %>/edit" class="btn edit-btn">
 						Edit Item
 					</a>
 				</div>
