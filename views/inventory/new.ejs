@@ -1,9 +1,8 @@
 <%- include('../partials/inventoryHeader'); -%>
 
-<header class="masthead">
-	<div class="container h-100">
-		<div class="row h-100 justify-content-center align-items-center">
-			<div class="col-sm-12 col-md-8">
+	<div class="container">
+		<div class="row justify-content-center align-items-center mt-5">
+			<div class="col-sm-12 col-md-8 my-5">
 				<div class="card">
 					<h1 class="card-header stPat-gradient text-center py-4">Add New Item</h1>
 					<div class="card-body px-lg-5 pt-0">
@@ -34,7 +33,7 @@
 							</div>
 							<div class="cForm">
 								<select class="form-control" name="category" id="category" required>
-									<option value="">--Please choose an option--</option>
+									<option value="">- Please choose an option -</option>
 									<option value="balloon">Balloon</option>
 									<option value="graphic">Graphic</option>
 									<option value="letter">Letter</option>
@@ -48,7 +47,7 @@
 									type="text"
 									name="tag"
 									id="tag"
-									placeholder="Item's Tags"
+									placeholder="Tags (separated by comma)"
 									required
 								/>
 							</div>
@@ -84,6 +83,5 @@
 			</div>
 		</div>
 	</div>
-</header>
 
 <%- include('../partials/footer'); -%>
