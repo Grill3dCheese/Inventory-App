@@ -1,27 +1,35 @@
 <%- include('../partials/inventoryHeader'); -%>
 
-<div class="container">
-	<div class="row justify-content-center topPadding">
-		<div class="col-sm-12 col-md-8">
+<div class="container-fluid">
+	<div class="row justify-content-center align-items-center">
+		<div class="col-sm-12 col-md-8 my-5">
 			<div class="card">
-				<h1 class="card-header stPat-gradient text-center py-4">Edit
+				<h1 class="card-header lemonade-gradient text-center py-4">Edit
 					"<%= item.name %>"
 				</h1>
 				<div class="card-body px-lg-5 pt-0">
 					<form action="/inventory/<%= item._id %>?_method=PUT" method="POST">
-						<div class="mod-form">
+						<div class="cForm">
 							<input class="form-control" type="text" name="item[name]" id="name" value="<%= item.name %>" required>
 						</div>
-						<div class="mod-form">
+						<div class="cForm">
+							<input type="number" class="form-control" name="item[quantity]" id="quantity" value="<%= item.quantity %>" step="1" min="0" max="10" pattern="\d*" required>
+						</div>
+						<div class="cForm">
+							<select name="item[category]" id="category" class="form-control" required>
+								<option value=""><%= item.category %></option>
+							</select>
+						</div>
+						<div class="cForm">
 							<input class="form-control" type="text" name="item[description]" id="description" value="<%= item.description %>" required>
 						</div>
-						<div class="mod-form">
+						<div class="cForm">
 							<input class="form-control" type="text" name="item[image]" id="image" value="<%= item.image %>" required>
 						</div>
-						<div class="mod-form">
+						<div class="cForm">
 							<textarea class="form-control mod-textarea" name="item[entry]" id="entry" rows="5" required><%= item.entry %></textarea>
 						</div>
-						<div class="mod-form">
+						<div class="cForm">
 							<button class="btn btn-lg btn-outline-dark btn-block">Submit!</button>
 						</div>
 					</form>
