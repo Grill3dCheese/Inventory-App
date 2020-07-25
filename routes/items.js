@@ -16,7 +16,7 @@ router.get("/", middleware.isLoggedIn, function(req, res){
 
 // numbers & letters route
 router.get("/numlet", middleware.isLoggedIn, function(req, res){
-	Item.find({$or:[{category: "number"},{category:"letter"}]}, function(err, items){
+	Item.find({$or:[{category: "Number"},{category:"Letter"}]}, function(err, items){
 		if(err){
 			console.log(err);
 		} else {
@@ -27,7 +27,7 @@ router.get("/numlet", middleware.isLoggedIn, function(req, res){
 
 // graphics route
 router.get("/graphic", middleware.isLoggedIn, function(req, res){
-	Item.find({category: "graphic"}, function(err, items){
+	Item.find({category: "Graphic"}, function(err, items){
 		if(err){
 			console.log(err);
 		} else {
@@ -38,7 +38,7 @@ router.get("/graphic", middleware.isLoggedIn, function(req, res){
 
 // stars route
 router.get("/star", middleware.isLoggedIn, function(req, res){
-	Item.find({category: "star"}, function(err, items){
+	Item.find({category: "Star"}, function(err, items){
 		if(err){
 			console.log(err);
 		} else {
@@ -49,7 +49,7 @@ router.get("/star", middleware.isLoggedIn, function(req, res){
 
 // balloons route
 router.get("/balloon", middleware.isLoggedIn, function(req, res){
-	Item.find({category: "balloon"}, function(err, items){
+	Item.find({category: "Balloon"}, function(err, items){
 		if(err){
 			console.log(err);
 		} else {
