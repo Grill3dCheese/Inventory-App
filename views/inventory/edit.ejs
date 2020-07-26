@@ -4,10 +4,11 @@
 	<div class="row justify-content-center align-items-center">
 		<div class="col-sm-12 col-md-8 my-5">
 			<div class="card">
-				<h1 class="card-header lemonade-gradient text-center py-4">Edit
-					"<%= item.name %>"
-				</h1>
+				<h2 class="card-header lemonade-gradient text-center py-5"></h2>
 				<div class="card-body px-lg-5 pt-0">
+					<div class="itemImg text-center">
+						<img src="<%= item.image %>" alt="An image of the current item" class="imgShadow" />
+					</div>
 					<form action="/inventory/<%= item._id %>?_method=PUT" method="POST">
 						<div class="cForm">
 							<input class="form-control" type="text" name="item[name]" id="name" value="<%= item.name %>" required>
@@ -17,7 +18,7 @@
 						</div>
 						<div class="cForm">
 							<select name="item[category]" id="category" class="form-control" required>
-								<option value=""><%= item.category %></option>
+								<option value="<%= item.category %>"><%= item.category %></option>
 							</select>
 						</div>
 						<div class="cForm">
@@ -27,10 +28,10 @@
 							<input class="form-control" type="text" name="item[image]" id="image" value="<%= item.image %>" required>
 						</div>
 						<div class="cForm">
-							<textarea class="form-control mod-textarea" name="item[entry]" id="entry" rows="5" required><%= item.entry %></textarea>
+							<textarea class="form-control mod-textarea" name="item[entry]" id="entry" rows="5"><%= item.entry %></textarea>
 						</div>
 						<div class="cForm">
-							<button class="btn btn-lg btn-outline-dark btn-block">Submit!</button>
+							<button class="btn btn-lg btn-outline-dark btn-block">Submit Changes!</button>
 						</div>
 					</form>
 					<a href="/inventory">Go Back</a>
