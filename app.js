@@ -18,7 +18,7 @@ var indexRoutes		= require("./routes/index"),
 // assign mongoose promise library and connect to database
 mongoose.Promise = global.Promise;
 
-mongoose.connect('mongodb://localhost:27017/inventory_app', { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true })
+mongoose.connect('mongodb://localhost:27017/inventory_app', { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true, useFindAndModify: false })
 		.then(() => console.log(`Database connected.`))
 		.catch(err => console.log(`Database connection error: ${err.message}`));
 
