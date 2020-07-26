@@ -19,19 +19,24 @@
 						<div class="cForm">
 							<select name="item[category]" id="category" class="form-control" required>
 								<option value="<%= item.category %>"><%= item.category %></option>
+								<option value="Balloon">Balloon</option>
+								<option value="Graphic">Graphic</option>
+								<option value="Letter">Letter</option>
+								<option value="Number">Number</option>
+								<option value="Star">Star</option>
 							</select>
 						</div>
 						<div class="cForm">
-							<input class="form-control" type="text" name="item[description]" id="description" value="<%= item.description %>" required>
+							<input class="form-control" type="text" name="item[tag]" id="tag" value="<%= item.tag %>" required>
 						</div>
 						<div class="cForm">
 							<input class="form-control" type="text" name="item[image]" id="image" value="<%= item.image %>" required>
 						</div>
 						<div class="cForm">
-							<textarea class="form-control mod-textarea" name="item[entry]" id="entry" rows="5"><%= item.entry %></textarea>
+							<textarea class="form-control mod-textarea" name="item[description]" id="description" rows="5"><%= item.description %></textarea>
 						</div>
 						<div class="cForm">
-							<button class="btn btn-lg btn-outline-dark btn-block">Submit Changes!</button>
+							<button class="btn btn-lg btn-outline-dark btn-block">Submit Changes</button>
 						</div>
 					</form>
 					<a href="/inventory">Go Back</a>
