@@ -23,8 +23,9 @@ h1 {
 
 h2 {
 	font-family: Raleway, Helvetica Neue, Helvetica, Arial, sans-serif;
-	font-weight: 700;
-	margin-top: 25px;
+	font-size: 1rem;
+	margin: 
+	letter-spacing: .10em;
 	text-transform: uppercase
 }
 
@@ -99,7 +100,7 @@ p {
 }
 
 .lemonade-gradient {
-	background: linear-gradient(40deg, rgba(255,255,224,1) 0%, rgba(254,255,97,1) 100%);
+	background: linear-gradient(40deg, rgba(255,255,235,1) 0%, rgba(254,255,150,1) 100%);
 }
 
 .shampoo-gradient {
@@ -347,6 +348,13 @@ hr.navHR {
 .edit-btn:focus {
 	background-color: red;
 	transition: all .3s ease-in-out
+}
+
+.itemImg img {
+	width: 150px;
+	margin-top: -4.75rem;
+	border: 5px solid rgba(255, 250, 240, 0.5);
+	border-radius: 50%
 }
 
 /* Forms */
