@@ -5,7 +5,23 @@ var middleware = require("../middleware");
 var User = require("../models/user");
 var async = require("async");
 var nodemailer = require("nodemailer");
+var	multer	= require("multer");
+var cloudinary = require("cloudinary").v2;
+var { CloudinaryStorage } = require("multer-storage-cloudinary");
 var crypto = require("crypto");
+
+cloudinary.config({
+	cloud_name: process.env.CLOUD_NAME,
+	api_key: process.env.API_CLOUD_KEY,
+	api_secret: process.env.API_CLOUD_SECRET
+});
+var storage = new CloudinaryStorage({
+	cloudinary: cloudinary,
+	folder: "assets/avatars",
+	allowedFormats: ["jpg", "jpeg", "png"],
+	transformation: [{ width: 150, height: 150, crop: "limit"}]
+});
+var parser = multer({storage: storage});
 
 // root route - login form
 router.get("/", function(req, res){
@@ -33,11 +49,12 @@ router.get("/register", function(req, res){
 });
 
 // post register logic
-router.post("/register", function(req, res){
+router.post("/register", parser.single('avatar'), function(req, res){
     var newUser = new User({
             username: req.body.username,
             firstName: req.body.firstName,
-            email: req.body.email
+            email: req.body.email,
+			avatar: req.file.path
         });
         
     if(req.body.adminCode != process.env.SECRETCODE) {
@@ -57,6 +74,13 @@ router.post("/register", function(req, res){
             res.redirect("/inventory"); 
        });
     });
+	console.log(req.file) // to see what is returned to me
+	var avatar = {};
+	avatar.url = req.file.url;
+	avatar.id = req.file.public_id;
+	User.create(avatar) //save image info in DB
+	.then(newAvatar => res.json(newAvatar))
+	.catch(err => console.log(err));
  });
 
 // logout route
