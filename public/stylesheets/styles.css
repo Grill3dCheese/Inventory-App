@@ -373,7 +373,22 @@ hr.navHR {
     border-radius: 0;
 }
 
-.cForm input:not([type]), .cForm input[type="text"]:not(.browser-default), .cForm input[type="number"]:not(.browser-default), .cForm input[type="password"]:not(.browser-default), .cForm input[type="email"]:not(.browser-default), .cForm input[type="url"]:not(.browser-default), .cForm textarea.mod-textarea, .cForm select {
+.form-control-placeholder {
+  position: absolute;
+  top: 0;
+  padding-top: 7px;
+  transition: all 200ms;
+  opacity: 0.5;
+}
+
+.form-control:focus + .form-control-placeholder,
+.form-control:valid + .form-control-placeholder {
+  font-size: 75%;
+  transform: translate3d(0, -100%, 0);
+  opacity: 1;
+}
+
+.cForm input:not([type]),.cForm input[type="text"]:not(.browser-default),.cForm input[type="number"]:not(.browser-default),.cForm input[type="password"]:not(.browser-default),.cForm input[type="file"]:not(.browser-default),.cForm input[type="email"]:not(.browser-default),.cForm input[type="url"]:not(.browser-default),.cForm textarea.mod-textarea, .cForm select {
     -webkit-box-sizing: content-box;
     box-sizing: content-box;
     background-color: transparent;
@@ -389,13 +404,13 @@ hr.navHR {
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
 }
 
-.cForm input:not([type]):focus:not([readonly]),.cForm input[type="text"]:not(.browser-default):focus:not([readonly]),.cForm input[type="number"]:not(.browser-default):focus:not([readonly]),.cForm input[type="password"]:not(.browser-default):focus:not([readonly]),.cForm input[type="email"]:not(.browser-default):focus:not([readonly]),.cForm input[type="url"]:not(.browser-default):focus:not([readonly]),.cForm textarea.mod-textarea:focus:not([readonly]),.cForm select:focus:not([readonly]) {
+.cForm input:not([type]):focus:not([readonly]),.cForm input[type="text"]:not(.browser-default):focus:not([readonly]),.cForm input[type="number"]:not(.browser-default):focus:not([readonly]),.cForm input[type="file"]:not(.browser-default):focus:not([readonly]),.cForm input[type="password"]:not(.browser-default):focus:not([readonly]),.cForm input[type="email"]:not(.browser-default):focus:not([readonly]),.cForm input[type="url"]:not(.browser-default):focus:not([readonly]),.cForm textarea.mod-textarea:focus:not([readonly]),.cForm select:focus:not([readonly]) {
     border-bottom: 1px solid #22577f;
     -webkit-box-shadow: 0 1px 0 0 #22577f;
     box-shadow: 0 1px 0 0 #22577f
 }
 
-.cForm input:not([type]):focus:not([readonly])+label,.cForm input[type="text"]:not(.browser-default):focus:not([readonly])+label,.cForm input[type="number"]:not(.browser-default):focus:not([readonly])+label,.cForm input[type="password"]:not(.browser-default):focus:not([readonly])+label,.cForm input[type="email"]:not(.browser-default):focus:not([readonly])+label,.cForm input[type="url"]:not(.browser-default):focus:not([readonly])+label,.cForm textarea.mod-textarea:focus:not([readonly])+label,.cForm select:focus:not([readonly])+label {
+.cForm input:not([type]):focus:not([readonly])+label,.cForm input[type="text"]:not(.browser-default):focus:not([readonly])+label,.cForm input[type="number"]:not(.browser-default):focus:not([readonly])+label,.cForm input[type="file"]:not(.browser-default):focus:not([readonly])+label,.cForm input[type="password"]:not(.browser-default):focus:not([readonly])+label,.cForm input[type="email"]:not(.browser-default):focus:not([readonly])+label,.cForm input[type="url"]:not(.browser-default):focus:not([readonly])+label,.cForm textarea.mod-textarea:focus:not([readonly])+label,.cForm select:focus:not([readonly])+label {
     color: #22577f
 }
 
