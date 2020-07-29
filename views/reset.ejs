@@ -10,26 +10,26 @@
 					</h1>
 					<div class="card-body px-lg-5 pt-0">
 						<form action="/reset/<%= token %>" method="POST">
-							<div class="mod-form">
+							<div class="cForm">
 								<input
 									type="password"
 									name="password"
 									id="password"
-									placeholder="New Password"
 									autofocus="autofocus"
 									class="form-control"
 									required
 								/>
+								<label class="form-control-placeholder" for="password">New Password</label>
 							</div>
-							<div class="mod-form">
+							<div class="cForm">
 								<input
 									type="password"
 									name="confirm"
 									id="confirm_password"
-									placeholder="Confirm Password"
 									class="form-control"
 									required
 								/>
+								<label class="form-control-placeholder" for="confirm_password">Confirm Password</label>
 							</div>
 							<div class="mod-form">
 								<button type="submit" class="btn btn-outline-dark btn-lg btn-block">
