@@ -86,4 +86,15 @@ $(document).ready(function () {
 			}
 		}
 	});
+	
+	// Add active class
+	var selector = '.top-bar li';
+	var url = window.location.href;
+	var target = url.split('/');
+	$(selector).each(function() {
+		if($(this).find('a').attr('href')===('/inventory/'+target[target.length-1])){
+			$(selector).removeClass('active');
+			$(this).removeClass('active').addClass('active');
+		}
+	});
 });
