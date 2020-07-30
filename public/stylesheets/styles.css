@@ -50,9 +50,9 @@ h4 {
 	text-transform: uppercase
 }
 
-a {
+/* a {
 	transition: all .3s ease-in-out
-}
+} */
 
 a:focus,
 a:hover {
@@ -61,6 +61,11 @@ a:hover {
 
 p {
 	margin: 5px 0
+}
+
+.active {
+	-webkit-box-shadow:0 15px 10px -9px rgba(255,160,140,0.24),0 15px 10px -9px rgba(255,160,140,0.19) !important;
+	box-shadow:0 15px 10px -9px rgba(255,160,140,0.24),0 15px 10px -9px rgba(255,160,140,0.19) !important
 }
 
 .btn.focus, .btn:focus {
@@ -232,7 +237,8 @@ hr.navHR {
 }
 
 .profileImg img {
-	width: 150px;
+	width: 200px;
+	height: 200px;
 	margin-top: -5.5rem;
 	border: 5px solid rgba(255, 250, 240, 0.5);
 	border-radius: 50%
