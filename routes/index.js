@@ -18,8 +18,7 @@ cloudinary.config({
 var storage = new CloudinaryStorage({
 	cloudinary: cloudinary,
 	folder: "assets/avatars",
-	allowedFormats: ["jpg", "jpeg", "png"],
-	transformation: [{ width: 150, height: 150, crop: "limit"}]
+	allowedFormats: ["jpg", "jpeg", "png"]
 });
 var parser = multer({storage: storage});
 
@@ -75,12 +74,6 @@ router.post("/register", parser.single('avatar'), function(req, res){
        });
     });
 	console.log(req.file) // to see what is returned to me
-	var avatar = {};
-	avatar.url = req.file.url;
-	avatar.id = req.file.public_id;
-	User.create(avatar) //save image info in DB
-	.then(newAvatar => res.json(newAvatar))
-	.catch(err => console.log(err));
  });
 
 // logout route
