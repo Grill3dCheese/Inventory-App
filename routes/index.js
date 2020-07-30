@@ -17,7 +17,7 @@ cloudinary.config({
 });
 var storage = new CloudinaryStorage({
 	cloudinary: cloudinary,
-	folder: "assets/avatars",
+	folder: "avatars",
 	allowedFormats: ["jpg", "jpeg", "png"]
 });
 var parser = multer({storage: storage});
