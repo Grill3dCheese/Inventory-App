@@ -357,7 +357,8 @@ hr.navHR {
 }
 
 .itemImg img {
-	width: 150px;
+	width: 175px;
+	height: 175px;
 	margin-top: -4.75rem;
 	border: 5px solid rgba(255, 250, 240, 0.5);
 	border-radius: 50%
