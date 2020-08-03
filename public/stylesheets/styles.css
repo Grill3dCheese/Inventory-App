@@ -24,7 +24,6 @@ h1 {
 h2 {
 	font-family: Raleway, Helvetica Neue, Helvetica, Arial, sans-serif;
 	font-size: 1rem;
-	margin: 
 	letter-spacing: .10em;
 	text-transform: uppercase
 }
@@ -245,7 +244,7 @@ hr.navHR {
 }
 
 .scrollUp {
-    transform: translateY(-92px);
+    transform: translateY(-90px);
 }
 
 .jumbotron {
