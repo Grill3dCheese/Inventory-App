@@ -6,7 +6,7 @@
 				<div class="card">
 					<h1 class="card-header cucumber-gradient text-center py-4">Add New Item</h1>
 					<div class="card-body px-lg-5 pt-0">
-						<form action="/inventory" method="POST">
+						<form action="/inventory" enctype="multipart/form-data" method="POST">
 							<div class="cForm">
 								<input
 									class="form-control"
@@ -54,10 +54,9 @@
 							<div class="cForm">
 								<input
 									class="form-control"
-									type="text"
+									type="file"
 									name="image"
 									id="image"
-									required
 								/>
 								<label class="form-control-placeholder" for="image">Item Photo</label>
 							</div>
