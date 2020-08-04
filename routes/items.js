@@ -2,6 +2,21 @@ var express = require("express");
 var router = express.Router();
 var Item = require("../models/item");
 var middleware = require("../middleware");
+var	multer	= require("multer");
+var cloudinary = require("cloudinary").v2;
+var { CloudinaryStorage } = require("multer-storage-cloudinary");
+
+cloudinary.config({
+	cloud_name: process.env.CLOUD_NAME,
+	api_key: process.env.API_CLOUD_KEY,
+	api_secret: process.env.API_CLOUD_SECRET
+});
+var storage = new CloudinaryStorage({
+	cloudinary: cloudinary,
+	folder: "product",
+	allowedFormats: ["jpg", "jpeg", "png"]
+});
+var parser = multer({storage: storage});
 
 // index of inventory page
 router.get("/", middleware.isLoggedIn, function(req, res){
@@ -60,13 +75,13 @@ router.get("/balloon", middleware.isLoggedIn, function(req, res){
 
 // Add item to inventory database routing
 // CREATE - add new item
-router.post("/", middleware.isLoggedIn, function(req, res){
+router.post("/", middleware.isLoggedIn, parser.single('image'), function(req, res){
 	// get data from form and add to items array
 	var name = req.body.name;
 	var quantity = req.body.quantity;
 	var category = req.body.category;
 	var tag = req.body.tag;
-	var image = req.body.image;
+	var image = req.file.path;
 	var desc = req.body.description;
 	var author = {
 		id: req.user._id,
