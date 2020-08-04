@@ -12,9 +12,11 @@
 					<form action="/inventory/<%= item._id %>?_method=PUT" method="POST">
 						<div class="cForm">
 							<input class="form-control" type="text" name="item[name]" id="name" value="<%= item.name %>" required />
+							<label class="form-control-placeholder" for="name">Item Name</label>
 						</div>
 						<div class="cForm">
 							<input type="number" class="form-control" name="item[quantity]" id="quantity" value="<%= item.quantity %>" step="1" min="0" max="10" pattern="\d*" required />
+							<label class="form-control-placeholder" for="quantity">Current Quantity</label>
 						</div>
 						<div class="cForm">
 							<select name="item[category]" id="category" class="form-control" required>
@@ -25,12 +27,15 @@
 								<option value="Number">Number</option>
 								<option value="Star">Star</option>
 							</select>
+							<label class="form-control-placeholder" for="category">Category</label>
 						</div>
 						<div class="cForm">
 							<input class="form-control" type="text" name="item[tag]" id="tag" value="<%= item.tag %>" required />
+							<label class="form-control-placeholder" for="tag">Tags (separated by commas)</label>
 						</div>
 						<div class="cForm">
 							<input class="form-control" type="text" name="item[image]" id="image" value="<%= item.image %>" />
+							<label class="form-control-placeholder" for="image">Image URL</label>
 						</div>
 						<div class="cForm">
 							<textarea class="form-control mod-textarea" name="item[description]" id="description" rows="5"><%= item.description %></textarea>
@@ -39,6 +44,11 @@
 							<button class="btn btn-lg btn-outline-dark btn-block">Update</button>
 						</div>
 					</form>
+						<div class="cForm">
+						<form action="/inventory/<%= item._id %>?_method=DELETE" method="POST">
+							<button class="btn btn-lg btn-outline-danger btn-block">Delete</button>
+						</form>
+							</div>
 					<a href="/inventory">Go Back</a>
 				</div>
 			</div>
