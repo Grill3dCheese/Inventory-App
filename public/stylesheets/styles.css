@@ -63,8 +63,8 @@ p {
 }
 
 .active {
-	-webkit-box-shadow:0 15px 10px -9px rgba(255,160,140,0.24),0 15px 10px -9px rgba(255,160,140,0.19) !important;
-	box-shadow:0 15px 10px -9px rgba(255,160,140,0.24),0 15px 10px -9px rgba(255,160,140,0.19) !important
+	-webkit-box-shadow:0 15px 10px -9px rgba(255,166,43,0.24),0 15px 10px -9px rgba(255,166,43,0.19) !important;
+	box-shadow:0 15px 10px -9px rgba(255,166,43,0.24),0 15px 10px -9px rgba(255,166,43,0.19) !important
 }
 
 .btn.focus, .btn:focus {
@@ -104,7 +104,9 @@ p {
 }
 
 .lemonade-gradient {
-	background: linear-gradient(40deg, rgba(255,255,235,1) 0%, rgba(254,255,150,1) 100%);
+	background-color: #FF3CAC;
+background-image: linear-gradient(225deg, #FF3CAC 0%, #bb75fb 50%, #3aacfb 100%);
+
 }
 
 .shampoo-gradient {
@@ -148,7 +150,7 @@ background: linear-gradient(to bottom, #f7797d, #FBD786, #C6FFDD); /* W3C, IE 10
 #mainNav {
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
     transition: all 1.2s;
-	background-color: rgba(49, 82, 147, 0.5)
+	background-color: rgba(143, 162, 197, 1)
 }
 
 #mainNav .nav-link,
@@ -165,7 +167,7 @@ background: linear-gradient(to bottom, #f7797d, #FBD786, #C6FFDD); /* W3C, IE 10
     border: none;
 }
 
-hr.navHR {
+/* hr.navHR {
   	border: 0;
   	height: 1px;
 	transform: rotate(90deg);
@@ -173,7 +175,7 @@ hr.navHR {
   background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
   background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
   background-image: linear-gradient(to right, #f0f0f0, #8c8b8b, #f0f0f0);
-}
+} */
 
 .navbar-brand {
 	margin: 0
@@ -294,6 +296,10 @@ hr.navHR {
 	padding: .75rem 1.25rem 0 1.25rem;
 }
 
+.headerPadding {
+	padding: 4rem 0
+}
+
 .card-subhead {
 	padding-bottom: 5rem;
     margin-bottom: 0;
@@ -351,14 +357,15 @@ hr.navHR {
 
 .edit-btn:hover,
 .edit-btn:focus {
-	background-color: red;
+	background-color: #000;
+	color: #fff;
 	transition: all .3s ease-in-out
 }
 
 .itemImg img {
 	width: 175px;
 	height: 175px;
-	margin-top: -4.75rem;
+	margin-top: -9.75rem;
 	border: 5px solid rgba(255, 250, 240, 0.5);
 	border-radius: 50%
 }
