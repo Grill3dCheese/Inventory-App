@@ -17,9 +17,19 @@
 					<h4 class="card-title">
 						<%= item.name %>
 					</h4>
+					<%if (item.quantity === 0) { %>
+					<p class="quantity dangerText justify-content-end">
+						<%= item.quantity %> available
+					</p>
+					<% } else if (item.quantity <= 2) { %>
+					<p class="quantity warningText justify-content-end">
+						<%= item.quantity %> available
+					</p>
+					<% } else { %>
 					<p class="quantity justify-content-end">
 						<%= item.quantity %> available
 					</p>
+					<% } %>
 					<p class="card-text">
 						<i class="fas fa-tag"></i>
 						<%= item.tag %>
