@@ -340,8 +340,15 @@ background: linear-gradient(to bottom, #f7797d, #FBD786, #C6FFDD); /* W3C, IE 10
 .quantity {
 	font-size: 12px;
 	letter-spacing: .1em;
-	line-height: 1.6em;
 	text-transform: uppercase
+}
+
+.dangerText {
+	color: red
+}
+
+.warningText {
+	color: #FFA62B
 }
 
 .edit-btn {
@@ -357,7 +364,7 @@ background: linear-gradient(to bottom, #f7797d, #FBD786, #C6FFDD); /* W3C, IE 10
 
 .edit-btn:hover,
 .edit-btn:focus {
-	background-color: #000;
+	background-color: #364958;
 	color: #fff;
 	transition: all .3s ease-in-out
 }
