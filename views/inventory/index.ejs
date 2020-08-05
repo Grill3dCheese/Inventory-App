@@ -2,6 +2,13 @@
 
 <div class="container-fluid">
 	<div class="row justify-content-center">
+		<form action="/inventory" method="GET" class="form-inline">
+			<div class="cForm">
+				<label class="form-control-placeholder" for="search">Tag Search</label>
+				<input type="text" name="search" id="search" class="form-control">
+				<input type="submit" value="Search" class="btn">
+			</div>
+		</form>
 		<a class="btn border-0 shampoo-gradient mt-4 py-2" href="/inventory/new" role="button">
 			<i class="fas fa-pencil-alt"></i> Add New Item</a>
 	</div>
