@@ -1,18 +1,25 @@
 <%- include('../partials/inventoryHeader'); -%>
 
 <div class="container-fluid">
-	<div class="row justify-content-center">
-		<form action="/inventory" method="GET" class="form-inline">
-			<div class="cForm">
-				<label class="form-control-placeholder" for="search">Tag Search</label>
-				<input type="text" name="search" id="search" class="form-control">
-				<input type="submit" value="Search" class="btn">
-			</div>
-		</form>
-		<a class="btn border-0 shampoo-gradient mt-4 py-2" href="/inventory/new" role="button">
-			<i class="fas fa-pencil-alt"></i> Add New Item</a>
-	</div>
-
+	<div class="row justify-content-center mt-3 mb-0">
+		<div class="col-8">
+			<form action="/inventory" method="GET">
+				<div class="sForm">
+					<input class="form-control" type="text" name="search" id="search" required />
+					<label class="form-control-placeholder" for="search">Tags Search</label>
+				</div>
+				<button type="submit"><i class="fas fa-search"></i></button>
+			</form>
+		</div>
+		<div class="col-4 px-0 text-center">
+			<!-- <a class="btn border-0 blueDreamsLin mt-4 py-2 px-3" href="/inventory/new" role="button">
+				<i class="fas fa-search"></i
+			></a> -->
+			<a class="btn border-0 stPat-gradient mt-4 py-2 px-3" href="/inventory/new" role="button">
+				<i class="fas fa-plus"></i
+			></a>
+		</div>
+		</div>
 	<div class="row">
 		<% items.reverse().forEach(function(item){ %>
 		<div class="col-6 col-md-4 col-lg-2 col-xl-1">
