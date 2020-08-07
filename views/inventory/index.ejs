@@ -2,20 +2,14 @@
 
 <div class="container-fluid">
 	<div class="row justify-content-center mt-3 mb-0">
-		<div class="col-8">
-			<form action="/inventory" method="GET">
-				<div class="sForm">
-					<input class="form-control" type="text" name="search" id="search" required />
-					<label class="form-control-placeholder" for="search">Tags Search</label>
-				</div>
-				<button type="submit"><i class="fas fa-search"></i></button>
+		<div class="col-10">
+			<form action="/inventory" method="GET" class="sForm">
+					<input class="form-control" type="search" name="search" id="search" placeholder="Tags Search" required />
+					<button type="submit"><i class="fas fa-search"></i></button>
 			</form>
 		</div>
-		<div class="col-4 px-0 text-center">
-			<!-- <a class="btn border-0 blueDreamsLin mt-4 py-2 px-3" href="/inventory/new" role="button">
-				<i class="fas fa-search"></i
-			></a> -->
-			<a class="btn border-0 stPat-gradient mt-4 py-2 px-3" href="/inventory/new" role="button">
+		<div class="col-2 px-0 text-center">
+			<a class="btn border-0 stPat-gradient mt-3 py-2 px-3" href="/inventory/new" role="button">
 				<i class="fas fa-plus"></i
 			></a>
 		</div>
