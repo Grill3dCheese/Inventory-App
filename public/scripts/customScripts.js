@@ -10,7 +10,7 @@ window.setTimeout(function () {
 	$('.alert').slideUp(500, function () {
 		$(this).remove();
 	});
-}, 2000);
+}, 3000);
 
 	// hides navbar upon scrolling down and then reappears upon scrolling up
 
