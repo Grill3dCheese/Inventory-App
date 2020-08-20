@@ -1,4 +1,4 @@
-![Example image of the yard sign business!](public/assets/img/signexample.jpg "Example of Sign Dreamers Yard Sign")
+![Example image of yard sign business](public/assets/img/signexample.jpg "Example of Sign Dreamers Yard Sign")
 
 # Inventory-App
 
@@ -13,9 +13,14 @@ Ahhh yes! So I found this as an exciting opportunity to create a web application
 # Well, what's next?
 Currently the app is in development. While I have come out with a "stable V1.0" I still have plently to add. Currently the app has the ability to register a new user, login/authenticate, create new inventory to the DB, allows the user to edit & delete the item, filter for specific categories and a few smaller things. 
 
-However, I'm currently working on:
+This is an ongoing project. I'm currently working on:
 
 - 🔎 Search functionality! - Adding in the ability to search by given inventory tags.
-	- Would also like to be able to search for 
+	- Also adding functionality to search for full message, ex. "Happy 20th Birthday Keith!", which will locate all signs needed to complete this phrase.
+	- After searching for full phrase, add button to deduct signs needed to complete order if customer has booked
+	
+- 📆 Calendar functionality! - Add in a calendar so once a phrase is selected we can also include the date of the order. This will help establish what signs are already being used on a specific date
+	- Add in the ability to select a specific date, search for a phrase and then show stock available on that particular day based on other orders.
+	
 
 Disclaimer: This app is extremely specific to the business it is intended for. This is not a one size fits all type of inventory app.
