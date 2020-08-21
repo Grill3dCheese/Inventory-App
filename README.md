@@ -19,8 +19,12 @@ This is an ongoing project. I'm currently working on:
 	- Also adding functionality to search for full message, ex. "Happy 20th Birthday Keith!", which will locate all signs needed to complete this phrase.
 	- After searching for full phrase, add button to deduct signs needed to complete order if customer has booked
 	
-- 📆 Calendar functionality! - Add in a calendar so once a phrase is selected we can also include the date of the order. This will help establish what signs are already being used on a specific date
+- 📆 Calendar functionality! - Add in a calendar so once a phrase is booked we can also include the date of the order. This will help establish what signs are already being used on a specific date
 	- Add in the ability to select a specific date, search for a phrase and then show stock available on that particular day based on other orders.
 	
+- 📝 Orders! - A separate section of the app to track all of our orders and customer information.
+	- Helpful to track county/zip code information for tax purposes.
+	
+---
 
-Disclaimer: This app is extremely specific to the business it is intended for. This is not a one size fits all type of inventory app.
+##### Disclaimer: This app is extremely specific to the business it is intended for. This is not a one size fits all type of inventory app.
