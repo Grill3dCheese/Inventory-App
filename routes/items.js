@@ -20,13 +20,24 @@ var parser = multer({storage: storage});
 
 // index of inventory page
 router.get("/", middleware.isLoggedIn, function(req, res){
-    Item.find({}, function(err, items){
+	if(req.query.search) {
+		const regex = new RegExp(escapeRegex(req.query.search), 'gi');
+    Item.find({tag: regex}, function(err, items){
         if(err){
             console.log(err);
         } else {
              res.render("inventory/index", {items: items, page: "items"});
         }
-    });
+    });		
+	} else {
+		Item.find({}, function(err, items){
+			if(err){
+				console.log(err);
+			} else {
+				 res.render("inventory/index", {items: items, page: "items"});
+			}
+		});
+	}
 });
 
 // numbers & letters route
@@ -144,5 +155,9 @@ router.delete("/:id", middleware.isLoggedIn, function(req, res){
         }
     });
 });
+
+function escapeRegex(text) {
+    return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
+};
 
 module.exports = router;
