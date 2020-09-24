@@ -14,10 +14,9 @@
 			></a>
 		</div>
 		</div>
-	<div class="row">
+	<div class="row custom-grid mt-3">
 		<% items.reverse().forEach(function(item){ %>
-		<div class="col-6 col-md-4 col-lg-2 col-xl-1">
-			<div class="item-card card-overlay slender mb-1">
+			<div class="item-card">
 				<div class="view view-overlay">
 					<img class="card-img-top" src="<%= item.image %>" />
 				</div>
@@ -43,13 +42,12 @@
 						<%= item.tag %>
 					</p>
 				</div>
-				<div class="card-footer text-muted text-center">
+				<div class="card-footer text-center">
 					<a class="btn edit-btn" href="/inventory/<%= item._id %>/edit" role="button">
 						Edit Item
 					</a>
 				</div>
 			</div>
-		</div>
 		<% }); %>
 	</div>
 </div>
